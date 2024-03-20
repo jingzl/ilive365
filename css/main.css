@@ -588,12 +588,12 @@ h1, h2, h3, h4, h5, h6, p {
     font-variant: normal;
     text-transform: none;
     font-size: 1.6875rem;
-    font-size: 27px;
+    font-size: 14px;
     line-height: 1rem;
     line-height: 16px;
     color: #F10061;
     padding: 6px;
-    margin: 0 27px;
+    margin: 0 20px;
 
     -webkit-transition: color 0.3s ease;
        -moz-transition: color 0.3s ease;
@@ -610,7 +610,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .social {
-    margin-top: 90px;
+    margin-top: 10px;
     cursor: default;
 }
 
