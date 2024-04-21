@@ -378,7 +378,7 @@ h1, h2, h3, h4, h5, h6, p {
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 3px;
-    margin-bottom: 45px;
+    margin-bottom: 20px;
     color: #000;
 }
 
@@ -468,7 +468,7 @@ h1, h2, h3, h4, h5, h6, p {
    ========================================================================== */
 
 #about {
-    padding-bottom: 90px;
+    padding-bottom: 30px;
     background-color: #fff;
 }
 
