@@ -39,6 +39,7 @@ vm.max_map_count=262144
 $ git clone https://github.com/infiniflow/ragflow.git
 ```
 **2）启动**
+
 进入 docker 文件夹，利用提前编译好的 Docker 镜像启动服务器：目前官方提供的所有 Docker 镜像均基于 x86 架构构建，并不提供基于 ARM64 的 Docker 镜像。 如果你的操作系统是 ARM64 架构，请参考这篇文档（[Build RAGFlow Docker image | RAGFlow](https://ragflow.io/docs/dev/build_docker_image)）自行构建 Docker 镜像。
 运行以下命令会自动下载 RAGFlow Docker 镜像 v0.22.0。请参考下表查看不同 Docker 发行版的描述。如需下载不同于 v0.22.0 的 Docker 镜像，请在运行 docker compose 启动服务之前先更新 docker/.env 文件内的 RAGFLOW_IMAGE 变量。
 ```
@@ -79,24 +80,32 @@ docker logs -f xxx-ragflow-cpu-1
 ...
 ```
 **3）访问**
+
 通过http://IP 访问，默认端口80，可以自行在 .env 文件中调整。
-图1
+<img src="https://github.com/jingzl/ilive365/blob/main/blog/20251118_RAGFlow/1.jpg">
+
 第一次访问，需要注册。
 登录进去后，可以调整为 中文界面。
-图2
+<img src="https://github.com/jingzl/ilive365/blob/main/blog/20251118_RAGFlow/2.png">
+
 **4）配置**
+
 在右上角的设置中，可以进行数据源，大模型及MCP等配置。
 点击右上角头像，获得RAGFlow的API KEY和API服务器地址。
-图3
+<img src="https://github.com/jingzl/ilive365/blob/main/blog/20251118_RAGFlow/3.png">
+
 如果需要关闭注册，在 .env 文件中调整即可：
 ```
 REGISTER_ENABLED=0
 ```
 然后重启容器。可以看到，登录页面没有注册入口了。
+
 # 3. 可能出现的问题
+
 **1）镜像下载中报错**
 error pulling image configuration: download failed after attempts=1: toomanyrequests: too many requests
 解决方案：一方面更新docker的国内最新镜像源；另一方面把 .env 中的镜像地址调整为 华为源。
+
 **2）启动报错**
 Error response from daemon: failed to create task for container: failed to create shim task: OCI runtime create failed: runc create failed: unable to start container process: error during container init: exec: "./entrypoint.sh": permission denied: unknown
 原因分析：因为拷贝的仓库中的docker文件夹到服务器，entrypoint.sh 的权限不够
